@@ -15,7 +15,6 @@ import java.net.URI;
 @Configuration
 public class routes {
 
-
     @Bean
     public RouterFunction<ServerResponse> userProfileRoute(){
         return GatewayRouterFunctions.route("user-profile").route(RequestPredicates.path("/v1/banks/{bankId}/users"),
