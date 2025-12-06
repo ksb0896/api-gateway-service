@@ -1,0 +1,111 @@
+# Quick Reference - API Gateway 401 Fix
+
+## THE FIX IN ONE SENTENCE
+Updated gateway's JWT validation from old API to modern JJWT 0.11.x+ API to match token generation service.
+
+---
+
+## QUICK START (2 minutes)
+
+```powershell
+# Step 1: Kill old process (CRITICAL!)
+Stop-Process -Name java -Force -ErrorAction SilentlyContinue
+
+# Step 2: Wait
+Start-Sleep -Seconds 3
+
+# Step 3: Start new gateway
+cd "C:\ksb096-B\prjcts\sts\user-service\api-gateway-service"
+java -jar target\api_gateway-0.0.1-SNAPSHOT.jar
+
+# Step 4: In NEW terminal, test
+$token = "your_jwt_token"
+curl -X GET http://localhost:8080/v1/banks/100/users -H "Authorization: Bearer $token"
+
+# Expected: 200 OK (NOT 401!)
+```
+
+---
+
+## WHAT CHANGED (3 files)
+
+### 1. JwtUtil.java
+```diff
+- private final String secret = "...";
++ private final SecretKey key = Keys.hmacShaKeyFor("...".getBytes());
+
+- return Jwts.parser().setSigningKey(secret.getBytes())...
++ return Jwts.parserBuilder().setSigningKey(key).build()...
+```
+
+### 2. AuthenticationGatewayFilterFactory.java
+- Added `>>> [GATEWAY FILTER]` logging
+- Added `>>> [JWT]` logging
+- Better error messages
+
+### 3. application.properties
+```
+logging.level.com.ksb.micro.api_gateway.filter=DEBUG
+logging.level.com.ksb.micro.api_gateway.util=DEBUG
+```
+
+---
+
+## VERIFY IT WORKED
+
+Look for this in console:
+```
+>>> [GATEWAY FILTER] ✓ TOKEN VALID - Username: testuser
+```
+
+---
+
+## KEY POINTS
+
+✅ Always kill Java before restarting
+✅ New JAR must be built: `mvn clean package -DskipTests`
+✅ Look for `>>>` prefix in logs
+✅ Secret key MUST match between services
+
+---
+
+## ERROR = DIAGNOSIS
+
+| Error | Cause |
+|-------|-------|
+| Missing logs | Old Java running |
+| `>>> Missing Authorization header` | No Bearer token |
+| `>>> Invalid JWT signature` | Secret key mismatch |
+| `>>> Token EXPIRED` | Generate new token |
+| Plain 401 (no logs) | Route not matching |
+
+---
+
+## BUILT & READY
+✅ Compiled: `mvn clean package`
+✅ JAR location: `target/api_gateway-0.0.1-SNAPSHOT.jar`
+✅ Ready to: Start and test
+
+---
+
+## COMMANDS CHEAT SHEET
+
+```powershell
+# Kill Java
+Stop-Process -Name java -Force -ErrorAction SilentlyContinue
+
+# Build
+mvn clean package -DskipTests
+
+# Start (shows logs)
+java -jar target\api_gateway-0.0.1-SNAPSHOT.jar
+
+# Test (in another terminal)
+curl -X GET http://localhost:8080/v1/banks/100/users `
+  -H "Authorization: Bearer eyJ..."
+```
+
+---
+
+**Status**: ✅ READY - Restart the application now!
+
