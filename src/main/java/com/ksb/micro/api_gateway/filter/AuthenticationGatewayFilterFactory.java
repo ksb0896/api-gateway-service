@@ -45,6 +45,12 @@ public class AuthenticationGatewayFilterFactory extends AbstractGatewayFilterFac
             String path = exchange.getRequest().getPath().value();
             logger.info(">>> [GATEWAY FILTER] Processing request to: {}", path);
 
+            // Skip authentication for Swagger/OpenAPI documentation paths
+            if (path.contains("/v3/api-docs") || path.contains("/swagger-ui") || path.contains("/webjars")) {
+                logger.debug(">>> [GATEWAY FILTER] Swagger/OpenAPI path detected, skipping authentication: {}", path);
+                return chain.filter(exchange);
+            }
+
             if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
                 logger.warn(">>> [GATEWAY FILTER] Missing Authorization header for path: {}", path);
                 return this.onError(exchange, "Missing Authorization header", HttpStatus.UNAUTHORIZED);
@@ -75,7 +81,7 @@ public class AuthenticationGatewayFilterFactory extends AbstractGatewayFilterFac
                     String username = jwtUtil.getUsernameFromToken(token);
                     logger.info(">>> [GATEWAY FILTER] ✓ TOKEN VALID - Username: {} on path: {}", username, path);
 
-                    // 1. Create the Authentication object
+                    // 1. Authentication object
                     List<GrantedAuthority> authorities = Collections.emptyList();
                     Authentication authentication = new UsernamePasswordAuthenticationToken(
                             username, null, authorities
