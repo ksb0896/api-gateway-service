@@ -19,6 +19,7 @@ public class GatewaySecurityConfig {
                         .pathMatchers("/swagger-ui.html").permitAll()
                         .pathMatchers("/swagger-ui/**").permitAll()
                         .pathMatchers("/webjars/**").permitAll()
+                        .pathMatchers("/error").permitAll()
                         .anyExchange().permitAll()  // Allow all - let gateway filter handle auth
                 );
 
