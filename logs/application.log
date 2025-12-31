@@ -1,0 +1,352 @@
+2025-12-21 00:54:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-21 00:54:32 [main] INFO  c.k.m.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 17.0.12 with PID 12028 (C:\ksb096-B\prjcts\sts\user-service\api-gateway-service\target\classes started by ksb09 in C:\ksb096-B\prjcts\sts\user-service\api-gateway-service)
+2025-12-21 00:54:32 [main] INFO  c.k.m.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-21 00:54:36 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=6d71ff3c-c44d-3097-8816-7f623c36434c
+2025-12-21 00:54:37 [main] INFO  c.k.m.a.f.AuthenticationGatewayFilterFactory - === AuthenticationGatewayFilterFactory initialized ===
+2025-12-21 00:54:39 [main] WARN  o.s.c.g.c.GatewayClassPathWarningAutoConfiguration - 
+
+**********************************************************
+
+The artifact spring-cloud-gateway-server is deprecated. It will be removed in the next major release. Please add spring-cloud-gateway-server-webflux dependency.
+
+**********************************************************
+
+
+2025-12-21 00:54:39 [main] DEBUG o.s.c.g.config.GatewayProperties - Routes supplied from Gateway Properties: [RouteDefinition{id='profile_photo_route', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v1/banks/*/users/*/photo/**}}], filters=[FilterDefinition{name='Authentication', args={}}, FilterDefinition{name='CircuitBreaker', args={_genkey_0=profilePhotoBreaker, _genkey_1=forward:/fallback/profile-photo}}, FilterDefinition{name='RewritePath', args={_genkey_0=/v1/(?<segment>.*), _genkey_1=/v1/$\{segment}}}], uri=http://localhost:8082, order=0, metadata={}, enabled=true}, RouteDefinition{id='user-profile-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v1/banks/*/users, _genkey_1=/v1/banks/*/users/**}}], filters=[FilterDefinition{name='Authentication', args={}}, FilterDefinition{name='StripPrefix', args={_genkey_0=0}}], uri=http://localhost:8081, order=0, metadata={}, enabled=true}, RouteDefinition{id='auth_route', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/auth/**}}], filters=[FilterDefinition{name='StripPrefix', args={_genkey_0=0}}], uri=http://localhost:8083, order=0, metadata={}, enabled=true}, RouteDefinition{id='user-profile-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs/user-profile/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs}}], uri=http://localhost:8081, order=0, metadata={}, enabled=true}, RouteDefinition{id='profile-photo-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs/profile-photo/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs}}], uri=http://localhost:8082, order=0, metadata={}, enabled=true}, RouteDefinition{id='auth-service-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs/auth-service/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs}}], uri=http://localhost:8083, order=0, metadata={}, enabled=true}]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-21 00:54:40 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-21 00:54:40 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-21 00:54:41 [main] WARN  o.s.c.g.s.w.s.StarterDeprecatedAutoConfiguration - 
+
+**********************************************************
+
+spring-cloud-starter-gateway is deprecated. It will be removed in the next major release. Please use spring-cloud-starter-gateway-server-webflux instead.
+
+**********************************************************
+
+
+2025-12-21 00:54:42 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying {_genkey_0=/v1/banks/*/users/*/photo/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {} to Authentication
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {_genkey_0=profilePhotoBreaker, _genkey_1=forward:/fallback/profile-photo} to CircuitBreaker
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {_genkey_0=/v1/(?<segment>.*), _genkey_1=/v1/$\{segment}} to RewritePath
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: profile_photo_route
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying {_genkey_0=/v1/banks/*/users, _genkey_1=/v1/banks/*/users/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying filter {} to Authentication
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying filter {_genkey_0=0} to StripPrefix
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: user-profile-service
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth_route applying {_genkey_0=/auth/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth_route applying filter {_genkey_0=0} to StripPrefix
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth_route
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-docs applying {_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs/user-profile/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-docs applying filter {_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: user-profile-docs
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile-photo-docs applying {_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs/profile-photo/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile-photo-docs applying filter {_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: profile-photo-docs
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service-docs applying {_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs/auth-service/**} to Path
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service-docs applying filter {_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth-service-docs
+2025-12-21 00:54:42 [main] DEBUG o.s.c.g.filter.GatewayMetricsFilter - New routes count: 6
+2025-12-21 00:54:42 [main] INFO  c.k.m.a.ApiGatewayApplication - Started ApiGatewayApplication in 12.686 seconds (process running for 14.394)
+2025-12-21 00:54:42 [main] WARN  o.s.c.g.c.GatewayServerWebfluxPropertiesMigrationListener - 
+The use of configuration keys that have been renamed was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: spring.cloud.gateway.routes[0].id
+		Line: 11
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].id
+	Key: spring.cloud.gateway.routes[0].uri
+		Line: 12
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].uri
+	Key: spring.cloud.gateway.routes[0].predicates[0]
+		Line: 13
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].predicates[0]
+	Key: spring.cloud.gateway.routes[0].filters[0]
+		Line: 14
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[0]
+	Key: spring.cloud.gateway.routes[0].filters[1]
+		Line: 15
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[1]
+	Key: spring.cloud.gateway.routes[0].filters[2]
+		Line: 16
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[2]
+	Key: spring.cloud.gateway.routes[1].id
+		Line: 20
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].id
+	Key: spring.cloud.gateway.routes[1].uri
+		Line: 21
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].uri
+	Key: spring.cloud.gateway.routes[1].predicates[0]
+		Line: 22
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].predicates[0]
+	Key: spring.cloud.gateway.routes[1].filters[0]
+		Line: 23
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[0]
+	Key: spring.cloud.gateway.routes[1].filters[1]
+		Line: 24
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[1]
+	Key: spring.cloud.gateway.routes[2].id
+		Line: 28
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].id
+	Key: spring.cloud.gateway.routes[2].uri
+		Line: 29
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].uri
+	Key: spring.cloud.gateway.routes[2].predicates[0]
+		Line: 30
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].predicates[0]
+	Key: spring.cloud.gateway.routes[2].filters[0]
+		Line: 31
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].filters[0]
+	Key: spring.cloud.gateway.routes[3].id
+		Line: 80
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].id
+	Key: spring.cloud.gateway.routes[3].uri
+		Line: 81
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].uri
+	Key: spring.cloud.gateway.routes[3].predicates[0]
+		Line: 82
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].predicates[0]
+	Key: spring.cloud.gateway.routes[3].filters[0]
+		Line: 83
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].filters[0]
+	Key: spring.cloud.gateway.routes[4].id
+		Line: 86
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].id
+	Key: spring.cloud.gateway.routes[4].uri
+		Line: 87
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].uri
+	Key: spring.cloud.gateway.routes[4].predicates[0]
+		Line: 88
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].predicates[0]
+	Key: spring.cloud.gateway.routes[4].filters[0]
+		Line: 89
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].filters[0]
+	Key: spring.cloud.gateway.routes[5].id
+		Line: 92
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].id
+	Key: spring.cloud.gateway.routes[5].uri
+		Line: 93
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].uri
+	Key: spring.cloud.gateway.routes[5].predicates[0]
+		Line: 94
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].predicates[0]
+	Key: spring.cloud.gateway.routes[5].filters[0]
+		Line: 95
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].filters[0]
+
+
+Each configuration key has been temporarily mapped to its replacement for your convenience. To silence this warning, please update your configuration to use the new keys.
+
+2025-12-21 00:54:42 [main] WARN  o.s.b.c.p.m.PropertiesMigrationListener - 
+The use of configuration keys that have been renamed was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: management.metrics.export.prometheus.enabled
+		Line: 37
+		Replacement: management.prometheus.metrics.export.enabled
+
+
+Each configuration key has been temporarily mapped to its replacement for your convenience. To silence this warning, please update your configuration to use the new keys.
+
+2025-12-21 00:54:42 [main] ERROR o.s.b.c.p.m.PropertiesMigrationListener - 
+The use of configuration keys that are no longer supported was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: management.endpoint.prometheus.enabled
+		Line: 36
+		Reason: Replacement key 'management.endpoint.prometheus.access' uses an incompatible target type
+
+
+Please refer to the release notes or reference guide for potential alternatives.
+
+2025-12-21 01:05:52 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 01:05:52 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-12-21 01:06:03 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2025-12-21 01:06:03 [main] INFO  c.k.m.a.ApiGatewayApplication - Starting ApiGatewayApplication using Java 17.0.12 with PID 15736 (C:\ksb096-B\prjcts\sts\user-service\api-gateway-service\target\classes started by ksb09 in C:\ksb096-B\prjcts\sts\user-service\api-gateway-service)
+2025-12-21 01:06:03 [main] INFO  c.k.m.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-21 01:06:08 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=6d71ff3c-c44d-3097-8816-7f623c36434c
+2025-12-21 01:06:09 [main] INFO  c.k.m.a.f.AuthenticationGatewayFilterFactory - === AuthenticationGatewayFilterFactory initialized ===
+2025-12-21 01:06:11 [main] WARN  o.s.c.g.c.GatewayClassPathWarningAutoConfiguration - 
+
+**********************************************************
+
+The artifact spring-cloud-gateway-server is deprecated. It will be removed in the next major release. Please add spring-cloud-gateway-server-webflux dependency.
+
+**********************************************************
+
+
+2025-12-21 01:06:11 [main] DEBUG o.s.c.g.config.GatewayProperties - Routes supplied from Gateway Properties: [RouteDefinition{id='profile_photo_route', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v1/banks/*/users/*/photo/**}}], filters=[FilterDefinition{name='Authentication', args={}}, FilterDefinition{name='CircuitBreaker', args={_genkey_0=profilePhotoBreaker, _genkey_1=forward:/fallback/profile-photo}}, FilterDefinition{name='RewritePath', args={_genkey_0=/v1/(?<segment>.*), _genkey_1=/v1/$\{segment}}}], uri=http://localhost:8082, order=0, metadata={}, enabled=true}, RouteDefinition{id='user-profile-service', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v1/banks/*/users, _genkey_1=/v1/banks/*/users/**}}], filters=[FilterDefinition{name='Authentication', args={}}, FilterDefinition{name='StripPrefix', args={_genkey_0=0}}], uri=http://localhost:8081, order=0, metadata={}, enabled=true}, RouteDefinition{id='auth_route', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/auth/**}}], filters=[FilterDefinition{name='StripPrefix', args={_genkey_0=0}}], uri=http://localhost:8083, order=0, metadata={}, enabled=true}, RouteDefinition{id='user-profile-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs/user-profile/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs}}], uri=http://localhost:8081, order=0, metadata={}, enabled=true}, RouteDefinition{id='profile-photo-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs/profile-photo/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs}}], uri=http://localhost:8082, order=0, metadata={}, enabled=true}, RouteDefinition{id='auth-service-docs', predicates=[PredicateDefinition{name='Path', args={_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs/auth-service/**}}], filters=[FilterDefinition{name='RewritePath', args={_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs}}], uri=http://localhost:8083, order=0, metadata={}, enabled=true}]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-21 01:06:12 [main] INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-21 01:06:12 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 4 endpoints beneath base path '/actuator'
+2025-12-21 01:06:13 [main] WARN  o.s.c.g.s.w.s.StarterDeprecatedAutoConfiguration - 
+
+**********************************************************
+
+spring-cloud-starter-gateway is deprecated. It will be removed in the next major release. Please use spring-cloud-starter-gateway-server-webflux instead.
+
+**********************************************************
+
+
+2025-12-21 01:06:14 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying {_genkey_0=/v1/banks/*/users/*/photo/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {} to Authentication
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {_genkey_0=profilePhotoBreaker, _genkey_1=forward:/fallback/profile-photo} to CircuitBreaker
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile_photo_route applying filter {_genkey_0=/v1/(?<segment>.*), _genkey_1=/v1/$\{segment}} to RewritePath
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: profile_photo_route
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying {_genkey_0=/v1/banks/*/users, _genkey_1=/v1/banks/*/users/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying filter {} to Authentication
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-service applying filter {_genkey_0=0} to StripPrefix
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: user-profile-service
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth_route applying {_genkey_0=/auth/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth_route applying filter {_genkey_0=0} to StripPrefix
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth_route
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-docs applying {_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs/user-profile/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition user-profile-docs applying filter {_genkey_0=/v3/api-docs/user-profile, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: user-profile-docs
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile-photo-docs applying {_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs/profile-photo/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition profile-photo-docs applying filter {_genkey_0=/v3/api-docs/profile-photo, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: profile-photo-docs
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service-docs applying {_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs/auth-service/**} to Path
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition auth-service-docs applying filter {_genkey_0=/v3/api-docs/auth-service, _genkey_1=/v3/api-docs} to RewritePath
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.r.RouteDefinitionRouteLocator - RouteDefinition matched: auth-service-docs
+2025-12-21 01:06:14 [main] DEBUG o.s.c.g.filter.GatewayMetricsFilter - New routes count: 6
+2025-12-21 01:06:14 [main] INFO  c.k.m.a.ApiGatewayApplication - Started ApiGatewayApplication in 13.93 seconds (process running for 17.068)
+2025-12-21 01:06:14 [main] WARN  o.s.c.g.c.GatewayServerWebfluxPropertiesMigrationListener - 
+The use of configuration keys that have been renamed was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: spring.cloud.gateway.routes[0].id
+		Line: 11
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].id
+	Key: spring.cloud.gateway.routes[0].uri
+		Line: 12
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].uri
+	Key: spring.cloud.gateway.routes[0].predicates[0]
+		Line: 13
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].predicates[0]
+	Key: spring.cloud.gateway.routes[0].filters[0]
+		Line: 14
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[0]
+	Key: spring.cloud.gateway.routes[0].filters[1]
+		Line: 15
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[1]
+	Key: spring.cloud.gateway.routes[0].filters[2]
+		Line: 16
+		Replacement: spring.cloud.gateway.server.webflux.routes[0].filters[2]
+	Key: spring.cloud.gateway.routes[1].id
+		Line: 20
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].id
+	Key: spring.cloud.gateway.routes[1].uri
+		Line: 21
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].uri
+	Key: spring.cloud.gateway.routes[1].predicates[0]
+		Line: 22
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].predicates[0]
+	Key: spring.cloud.gateway.routes[1].filters[0]
+		Line: 23
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[0]
+	Key: spring.cloud.gateway.routes[1].filters[1]
+		Line: 24
+		Replacement: spring.cloud.gateway.server.webflux.routes[1].filters[1]
+	Key: spring.cloud.gateway.routes[2].id
+		Line: 28
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].id
+	Key: spring.cloud.gateway.routes[2].uri
+		Line: 29
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].uri
+	Key: spring.cloud.gateway.routes[2].predicates[0]
+		Line: 30
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].predicates[0]
+	Key: spring.cloud.gateway.routes[2].filters[0]
+		Line: 31
+		Replacement: spring.cloud.gateway.server.webflux.routes[2].filters[0]
+	Key: spring.cloud.gateway.routes[3].id
+		Line: 80
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].id
+	Key: spring.cloud.gateway.routes[3].uri
+		Line: 81
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].uri
+	Key: spring.cloud.gateway.routes[3].predicates[0]
+		Line: 82
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].predicates[0]
+	Key: spring.cloud.gateway.routes[3].filters[0]
+		Line: 83
+		Replacement: spring.cloud.gateway.server.webflux.routes[3].filters[0]
+	Key: spring.cloud.gateway.routes[4].id
+		Line: 86
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].id
+	Key: spring.cloud.gateway.routes[4].uri
+		Line: 87
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].uri
+	Key: spring.cloud.gateway.routes[4].predicates[0]
+		Line: 88
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].predicates[0]
+	Key: spring.cloud.gateway.routes[4].filters[0]
+		Line: 89
+		Replacement: spring.cloud.gateway.server.webflux.routes[4].filters[0]
+	Key: spring.cloud.gateway.routes[5].id
+		Line: 92
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].id
+	Key: spring.cloud.gateway.routes[5].uri
+		Line: 93
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].uri
+	Key: spring.cloud.gateway.routes[5].predicates[0]
+		Line: 94
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].predicates[0]
+	Key: spring.cloud.gateway.routes[5].filters[0]
+		Line: 95
+		Replacement: spring.cloud.gateway.server.webflux.routes[5].filters[0]
+
+
+Each configuration key has been temporarily mapped to its replacement for your convenience. To silence this warning, please update your configuration to use the new keys.
+
+2025-12-21 01:06:14 [main] WARN  o.s.b.c.p.m.PropertiesMigrationListener - 
+The use of configuration keys that have been renamed was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: management.metrics.export.prometheus.enabled
+		Line: 37
+		Replacement: management.prometheus.metrics.export.enabled
+
+
+Each configuration key has been temporarily mapped to its replacement for your convenience. To silence this warning, please update your configuration to use the new keys.
+
+2025-12-21 01:06:14 [main] ERROR o.s.b.c.p.m.PropertiesMigrationListener - 
+The use of configuration keys that are no longer supported was found in the environment:
+
+Property source 'Config resource 'class path resource [application.properties]' via location 'optional:classpath:/'':
+	Key: management.endpoint.prometheus.enabled
+		Line: 36
+		Reason: Replacement key 'management.endpoint.prometheus.access' uses an incompatible target type
+
+
+Please refer to the release notes or reference guide for potential alternatives.
+
+2025-12-21 01:38:39 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-21 01:38:39 [netty-shutdown] INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
