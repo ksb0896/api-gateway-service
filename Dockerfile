@@ -1,6 +1,5 @@
 FROM eclipse-temurin:17-jdk-alpine
 LABEL authors="ksb09"
 VOLUME /tmp
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/api-gateway.jar d-api-gateway.jar
+ENTRYPOINT ["java","-jar","/api-gateway.jar"]
